@@ -14,9 +14,13 @@
   <ul class="nav-links">
     <li><a href="#about">Über mich</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projekte</a></li>
     <li><a href="#experience">Erfahrung</a></li>
     <li><a href="#contact">Kontakt</a></li>
   </ul>
+  <button class="nav-toggle" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -150,6 +154,73 @@
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">Meine <span>Projekte</span></h2>
+  <div class="section-line"></div>
+  <div class="projects-grid fade-in">
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">🌐</span>
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </div>
+      <h3 class="project-title">Portfolio Website</h3>
+      <p class="project-desc">
+        Diese Portfolio-Seite — gebaut mit reinem HTML, CSS und JavaScript,
+        deployed über GitHub Pages. Responsive Design und scroll-basierte Animationen.
+      </p>
+      <div class="project-links">
+        <a href="https://github.com/fiaTG/fiaTG.github.io" target="_blank" rel="noopener" class="btn btn-outline btn-sm">GitHub</a>
+        <a href="https://fiaTG.github.io" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">🐍</span>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+        </div>
+      </div>
+      <h3 class="project-title">Python Automatisierung</h3>
+      <p class="project-desc">
+        Platzhalter – hier kommt dein Python-Projekt rein. Beschreibe kurz
+        was es tut, welches Problem es löst und was du dabei gelernt hast.
+      </p>
+      <div class="project-links">
+        <a href="#" class="btn btn-outline btn-sm">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-icon">💡</span>
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">PHP</span>
+          <span class="tag">MySQL</span>
+        </div>
+      </div>
+      <h3 class="project-title">Web-Projekt (Platzhalter)</h3>
+      <p class="project-desc">
+        Platzhalter – trag hier dein nächstes Projekt ein, z.B. eine Webseite
+        aus der Ausbildung oder ein persönliches Übungsprojekt.
+      </p>
+      <div class="project-links">
+        <a href="#" class="btn btn-outline btn-sm">GitHub</a>
+        <a href="#" class="btn btn-primary btn-sm">Live Demo</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- EXPERIENCE -->
 <section id="experience">
   <h2 class="section-title">Mein <span>Werdegang</span></h2>
@@ -264,6 +335,26 @@
     </div>
 
   </div>
+
+  <form class="contact-form fade-in" id="contact-form" action="https://formspree.io/f/DEINE_FORM_ID" method="POST">
+    <h3 class="contact-form-title">Nachricht schicken</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Dein Name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" placeholder="deine@email.de" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="message">Nachricht</label>
+      <textarea id="message" name="message" rows="5" placeholder="Deine Nachricht..." required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Absenden</button>
+    <p class="form-success" id="form-success">Danke! Ich melde mich bald.</p>
+  </form>
 </section>
 
 <footer>
