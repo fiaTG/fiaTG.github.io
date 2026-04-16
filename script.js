@@ -32,16 +32,3 @@ navLinks.querySelectorAll('a').forEach(link => {
     navLinks.classList.remove('open');
   });
 });
-
-// Contact form — show success message, prevent default submit for demo
-const contactForm = document.getElementById('contact-form');
-const formSuccess = document.getElementById('form-success');
-
-contactForm.addEventListener('submit', (e) => {
-  // Remove this block once Formspree ID is set — then let the form submit normally
-  if (contactForm.action.includes('DEINE_FORM_ID')) {
-    e.preventDefault();
-    formSuccess.classList.add('visible');
-    contactForm.reset();
-  }
-});
