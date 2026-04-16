@@ -3,9 +3,9 @@
 :root {
   --teal:    #0d9488;
   --teal-lt: #14b8a6;
-  --bg:      #0f172a;
-  --bg2:     #1e293b;
-  --bg3:     #334155;
+  --bg:      #141e30;
+  --bg2:     #1e2d42;
+  --bg3:     #2e405a;
   --text:    #e2e8f0;
   --muted:   #94a3b8;
   --border:  #1e293b;
@@ -264,7 +264,7 @@ footer {
 .project-links { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: auto; }
 .btn-sm { padding: 7px 16px; font-size: 0.82rem; }
 
-.btn-mail { margin-top: 2rem; display: inline-block; }
+.btn-mail { margin-top: 2.5rem; display: inline-block; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 680px) {
