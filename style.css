@@ -16,7 +16,11 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse at 65% 0%, rgba(13,148,136,0.13) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(20,60,120,0.2) 0%, transparent 50%),
+    var(--bg);
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.7;
 }
