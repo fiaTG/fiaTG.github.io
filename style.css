@@ -311,7 +311,8 @@ footer {
 }
 .soon-disabled { opacity: 0.5; cursor: default; pointer-events: none; }
 
-.btn-mail { margin-top: 2.5rem; display: inline-block; }
+.contact-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+.btn-mail { display: inline-block; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 680px) {
