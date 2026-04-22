@@ -24,6 +24,21 @@ window.addEventListener('scroll', () => {
   progressBar.style.width = pct + '%';
 }, { passive: true });
 
+// Project filter
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.project-card').forEach(card => {
+      const show = filter === 'all' || card.dataset.cat === 'highlight';
+      card.style.display = show ? '' : 'none';
+    });
+  });
+});
+// Hide school projects by default
+document.querySelectorAll('.project-card[data-cat="school"]').forEach(c => c.style.display = 'none');
+
 // Hamburger menu
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks  = document.querySelector('.nav-links');

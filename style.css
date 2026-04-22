@@ -250,6 +250,17 @@ footer {
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* ── PROJECT FILTER ── */
+.project-filter { display: flex; gap: .6rem; margin-bottom: 1.8rem; }
+.filter-btn {
+  padding: 7px 18px; border-radius: 99px;
+  font-size: 0.85rem; font-weight: 600; cursor: pointer;
+  border: 1px solid var(--bg3); background: transparent;
+  color: var(--muted); transition: all .2s;
+}
+.filter-btn:hover { border-color: var(--teal); color: var(--teal-lt); }
+.filter-btn.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+
 /* ── PROJECTS ── */
 .projects-grid {
   display: grid;
