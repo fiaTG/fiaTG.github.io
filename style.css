@@ -239,9 +239,9 @@ h2.section-title span { color: var(--teal-lt); }
   padding: 10px 20px;
   font-size: 0.88rem;
   visibility: visible; pointer-events: auto;
-  background: linear-gradient(90deg, #0d9488 0%, #14b8a6 40%, #d1faf5 50%, #14b8a6 60%, #0d9488 100%);
+  background: linear-gradient(135deg, #0d9488 0%, #14b8a6 40%, #d1faf5 50%, #14b8a6 60%, #0d9488 100%);
   background-size: 200% auto;
-  animation: shimmer 2.5s infinite linear;
+  animation: shimmer 4s infinite linear;
   box-shadow: 0 0 14px rgba(20,184,166,.45);
 }
 #back-to-top:hover { transform: translateY(-2px); box-shadow: 0 0 22px rgba(20,184,166,.7); }
