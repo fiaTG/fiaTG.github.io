@@ -220,6 +220,19 @@ h2.section-title span { color: var(--teal-lt); }
 .contact-value a { color: var(--text); }
 .contact-value a:hover { color: var(--teal-lt); }
 
+/* ── BACK TO TOP ── */
+#back-to-top {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 150;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--teal); color: #fff; border: none;
+  font-size: 1.2rem; cursor: pointer;
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s, transform .3s;
+  box-shadow: 0 4px 12px rgba(13,148,136,.4);
+}
+#back-to-top.visible { opacity: 1; pointer-events: auto; }
+#back-to-top:hover { background: var(--teal-lt); transform: translateY(-2px); }
+
 /* ── FOOTER ── */
 footer {
   text-align: center; padding: 2rem;

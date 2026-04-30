@@ -17,6 +17,13 @@ const barObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 document.querySelectorAll('.skills-grid').forEach(el => barObserver.observe(el));
 
+// Back to top button
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 300);
+}, { passive: true });
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
 // Scroll progress bar
 const progressBar = document.getElementById('scroll-progress');
 window.addEventListener('scroll', () => {
