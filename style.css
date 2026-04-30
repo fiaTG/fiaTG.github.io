@@ -10,9 +10,29 @@
   --muted:   #94a3b8;
   --border:  #1e293b;
   --radius:  10px;
+  --nav-bg:  rgba(15, 23, 42, 0.9);
+}
+
+[data-theme="light"] {
+  --bg:    #f1f5f9;
+  --bg2:   #ffffff;
+  --bg3:   #e2e8f0;
+  --text:  #1e293b;
+  --muted: #64748b;
+  --border:#e2e8f0;
+  --nav-bg: rgba(241, 245, 249, 0.92);
+}
+[data-theme="light"] body {
+  background:
+    radial-gradient(ellipse at 65% 0%, rgba(13,148,136,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(20,60,120,0.05) 0%, transparent 50%),
+    var(--bg);
 }
 
 html { scroll-behavior: smooth; }
+body, nav, .skill-card, .project-card, .contact-card, footer {
+  transition: background-color .3s ease, border-color .3s ease, color .3s ease;
+}
 
 /* ── SCROLL PROGRESS ── */
 #scroll-progress {
@@ -39,13 +59,20 @@ a:hover { text-decoration: underline; }
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(15, 23, 42, 0.9);
+  background: var(--nav-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--bg2);
   padding: 0 5%;
   display: flex; align-items: center; justify-content: space-between;
   height: 60px;
 }
+.nav-actions { display: flex; align-items: center; gap: .4rem; }
+#theme-toggle {
+  background: none; border: none; cursor: pointer;
+  font-size: 1.1rem; padding: 6px 8px; border-radius: var(--radius);
+  line-height: 1; transition: background .2s;
+}
+#theme-toggle:hover { background: var(--bg2); }
 .nav-logo { font-weight: 700; font-size: 1.1rem; color: var(--teal-lt); }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a { color: var(--muted); font-size: 0.9rem; transition: color .2s; }
@@ -245,7 +272,7 @@ h2.section-title span { color: var(--teal-lt); }
 #back-to-top:hover {
   background: linear-gradient(135deg, #0d9488 0%, #14b8a6 40%, #d1faf5 50%, #14b8a6 60%, #0d9488 100%);
   background-size: 200% auto;
-  animation: shimmer 4s infinite linear;
+  animation: shimmer 6s infinite linear;
   transform: translateY(-2px);
   box-shadow: 0 0 22px rgba(20,184,166,.7);
 }
