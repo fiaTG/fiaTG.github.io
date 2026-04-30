@@ -22,22 +22,27 @@ const backToTop = document.getElementById('back-to-top');
 window.addEventListener('scroll', () => {
   backToTop.classList.toggle('visible', window.scrollY > 300);
 }, { passive: true });
-backToTop.addEventListener('click', () => {
-  const start = window.scrollY;
-  const startTime = performance.now();
-  const duration = 700;
-  function easeOutBounce(t) {
-    if (t < 1/2.75)      return 7.5625*t*t;
-    else if (t < 2/2.75) { t -= 1.5/2.75;   return 7.5625*t*t + 0.75; }
-    else if (t < 2.5/2.75){ t -= 2.25/2.75; return 7.5625*t*t + 0.9375; }
-    else                  { t -= 2.625/2.75; return 7.5625*t*t + 0.984375; }
-  }
-  function step(now) {
-    const p = Math.min((now - startTime) / duration, 1);
-    window.scrollTo(0, start * (1 - easeOutBounce(p)));
-    if (p < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
+function smoothScrollTo(target, duration) {
+  return new Promise(resolve => {
+    const start = window.scrollY;
+    const t0 = performance.now();
+    function step(now) {
+      const p = Math.min((now - t0) / duration, 1);
+      const e = p < 0.5 ? 2*p*p : -1 + (4 - 2*p)*p;
+      window.scrollTo(0, start + (target - start) * e);
+      if (p < 1) requestAnimationFrame(step); else resolve();
+    }
+    requestAnimationFrame(step);
+  });
+}
+backToTop.addEventListener('click', async () => {
+  await smoothScrollTo(0, 350);
+  await smoothScrollTo(40, 150);
+  await smoothScrollTo(0, 100);
+  await smoothScrollTo(20, 100);
+  await smoothScrollTo(0, 100);
+  await smoothScrollTo(8, 80);
+  await smoothScrollTo(0, 100);
 });
 
 // Scroll progress bar
