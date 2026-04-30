@@ -22,28 +22,7 @@ const backToTop = document.getElementById('back-to-top');
 window.addEventListener('scroll', () => {
   backToTop.classList.toggle('visible', window.scrollY > 300);
 }, { passive: true });
-function smoothScrollTo(target, duration) {
-  return new Promise(resolve => {
-    const start = window.scrollY;
-    const t0 = performance.now();
-    function step(now) {
-      const p = Math.min((now - t0) / duration, 1);
-      const e = p < 0.5 ? 2*p*p : -1 + (4 - 2*p)*p;
-      window.scrollTo(0, start + (target - start) * e);
-      if (p < 1) requestAnimationFrame(step); else resolve();
-    }
-    requestAnimationFrame(step);
-  });
-}
-backToTop.addEventListener('click', async () => {
-  await smoothScrollTo(0, 350);
-  await smoothScrollTo(40, 150);
-  await smoothScrollTo(0, 100);
-  await smoothScrollTo(20, 100);
-  await smoothScrollTo(0, 100);
-  await smoothScrollTo(8, 80);
-  await smoothScrollTo(0, 100);
-});
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 // Scroll progress bar
 const progressBar = document.getElementById('scroll-progress');
