@@ -1,4 +1,3 @@
-// Claude Code setup test — 2026-07-01 (kann entfernt werden)
 // Dark / Light theme
 const themeToggle = document.getElementById('theme-toggle');
 const applyTheme = (theme) => {
